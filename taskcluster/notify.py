@@ -87,11 +87,11 @@ class Notify(BaseClient):
         return self._makeApiCall(self.funcinfo["ping"], *args, **kwargs)
 
     funcinfo = {
-        "pulse": {           'args': [],
-            'input': 'http://schemas.taskcluster.net/notify/v1/pulse-request.json',
+        "email": {           'args': [],
+            'input': 'http://schemas.taskcluster.net/notify/v1/email-request.json',
             'method': 'post',
-            'name': 'pulse',
-            'route': '/pulse',
+            'name': 'email',
+            'route': '/email',
             'stability': 'experimental'},
         "irc": {           'args': [],
             'input': 'http://schemas.taskcluster.net/notify/v1/irc-request.json',
@@ -99,17 +99,17 @@ class Notify(BaseClient):
             'name': 'irc',
             'route': '/irc',
             'stability': 'experimental'},
-        "email": {           'args': [],
-            'input': 'http://schemas.taskcluster.net/notify/v1/email-request.json',
-            'method': 'post',
-            'name': 'email',
-            'route': '/email',
-            'stability': 'experimental'},
         "ping": {           'args': [],
             'method': 'get',
             'name': 'ping',
             'route': '/ping',
             'stability': 'stable'},
+        "pulse": {           'args': [],
+            'input': 'http://schemas.taskcluster.net/notify/v1/pulse-request.json',
+            'method': 'post',
+            'name': 'pulse',
+            'route': '/pulse',
+            'stability': 'experimental'},
     }
 
 

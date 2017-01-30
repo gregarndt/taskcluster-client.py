@@ -175,7 +175,8 @@ def createStaticClient(name, api, genAsync=False):
 
 
     lines.append('    funcinfo = {')
-    for funcname, ref in functionInfo.items():
+    items = functionInfo.iteritems() if six.PY2 else functionInfo.items()
+    for funcname, ref in sorted(items):
         lines.append('        "%s": %s,' % (funcname, pprint.pformat(ref, indent=12)))
     lines.append('    }')
 

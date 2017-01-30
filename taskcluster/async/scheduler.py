@@ -230,6 +230,13 @@ class Scheduler(AsyncBaseClient):
         return await self._makeApiCall(self.funcinfo["ping"], *args, **kwargs)
 
     funcinfo = {
+        "createTaskGraph": {           'args': ['taskGraphId'],
+            'input': 'http://schemas.taskcluster.net/scheduler/v1/task-graph.json#',
+            'method': 'put',
+            'name': 'createTaskGraph',
+            'output': 'http://schemas.taskcluster.net/scheduler/v1/task-graph-status-response.json#',
+            'route': '/task-graph/<taskGraphId>',
+            'stability': 'experimental'},
         "extendTaskGraph": {           'args': ['taskGraphId'],
             'input': 'http://schemas.taskcluster.net/scheduler/v1/extend-task-graph-request.json#',
             'method': 'post',
@@ -242,13 +249,6 @@ class Scheduler(AsyncBaseClient):
             'name': 'info',
             'output': 'http://schemas.taskcluster.net/scheduler/v1/task-graph-info-response.json',
             'route': '/task-graph/<taskGraphId>/info',
-            'stability': 'experimental'},
-        "createTaskGraph": {           'args': ['taskGraphId'],
-            'input': 'http://schemas.taskcluster.net/scheduler/v1/task-graph.json#',
-            'method': 'put',
-            'name': 'createTaskGraph',
-            'output': 'http://schemas.taskcluster.net/scheduler/v1/task-graph-status-response.json#',
-            'route': '/task-graph/<taskGraphId>',
             'stability': 'experimental'},
         "inspect": {           'args': ['taskGraphId'],
             'method': 'get',
