@@ -239,6 +239,7 @@ for name, api in apiConfig.items():
 
 syncImporterFilename = os.path.join('taskcluster', '_client_importer.py')
 with open(syncImporterFilename, 'w') as f:
+    syncImporterLines.sort()
     syncImporterLines.append('')
     filesCreated.append(syncImporterFilename)
     f.write('\n'.join(syncImporterLines))
@@ -246,6 +247,7 @@ with open(syncImporterFilename, 'w') as f:
 
 asyncImporterFilename = os.path.join('taskcluster', 'async', '_client_importer.py')
 with open(asyncImporterFilename, 'w') as f:
+    asyncImporterLines.sort()
     asyncImporterLines.append('')
     filesCreated.append(asyncImporterFilename)
     f.write('\n'.join(asyncImporterLines))

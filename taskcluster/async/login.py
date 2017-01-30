@@ -56,19 +56,19 @@ class Login(AsyncBaseClient):
         return await self._makeApiCall(self.funcinfo["ping"], *args, **kwargs)
 
     funcinfo = {
-        "ping": {           'args': [],
-            'method': u'get',
-            'name': u'ping',
-            'route': u'/ping',
-            'stability': u'stable'},
         "credentialsFromPersonaAssertion": {           'args': [],
-            'input': u'http://schemas.taskcluster.net/login/v1/persona-request.json',
-            'method': u'post',
-            'name': u'credentialsFromPersonaAssertion',
-            'output': u'http://schemas.taskcluster.net/login/v1/credentials-response.json',
-            'route': u'/persona',
-            'stability': u'experimental'},
+            'input': 'http://schemas.taskcluster.net/login/v1/persona-request.json',
+            'method': 'post',
+            'name': 'credentialsFromPersonaAssertion',
+            'output': 'http://schemas.taskcluster.net/login/v1/credentials-response.json',
+            'route': '/persona',
+            'stability': 'experimental'},
+        "ping": {           'args': [],
+            'method': 'get',
+            'name': 'ping',
+            'route': '/ping',
+            'stability': 'stable'},
     }
 
 
-__all__ = ['createTemporaryCredentials', 'config', '_defaultConfig', 'createApiClient', 'createSession', u'Login']
+__all__ = ['createTemporaryCredentials', 'config', '_defaultConfig', 'createApiClient', 'createSession', 'Login']

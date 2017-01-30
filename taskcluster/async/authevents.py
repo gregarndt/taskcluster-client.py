@@ -38,7 +38,7 @@ class AuthEvents(AsyncBaseClient):
     """
 
     def clientCreated(self, *args, **kwargs):
-        return self._makeTopicExchange({'schema': u'http://schemas.taskcluster.net/auth/v1/client-message.json#', 'routingKey': [{u'multipleWords': True, u'required': False, u'name': u'reserved', u'summary': u'Space reserved for future routing-key entries, you should always match this entry with `#`. As automatically done by our tooling, if not specified.'}], 'name': u'clientCreated', 'exchange': u'client-created'}, *args, **kwargs)
+        return self._makeTopicExchange({'exchange': 'client-created', 'name': 'clientCreated', 'schema': 'http://schemas.taskcluster.net/auth/v1/client-message.json#', 'routingKey': [{'multipleWords': True, 'summary': 'Space reserved for future routing-key entries, you should always match this entry with `#`. As automatically done by our tooling, if not specified.', 'name': 'reserved', 'required': False}]}, *args, **kwargs)
 
     """
     Client Updated Messages
@@ -51,7 +51,7 @@ class AuthEvents(AsyncBaseClient):
     """
 
     def clientUpdated(self, *args, **kwargs):
-        return self._makeTopicExchange({'schema': u'http://schemas.taskcluster.net/auth/v1/client-message.json#', 'routingKey': [{u'multipleWords': True, u'required': False, u'name': u'reserved', u'summary': u'Space reserved for future routing-key entries, you should always match this entry with `#`. As automatically done by our tooling, if not specified.'}], 'name': u'clientUpdated', 'exchange': u'client-updated'}, *args, **kwargs)
+        return self._makeTopicExchange({'exchange': 'client-updated', 'name': 'clientUpdated', 'schema': 'http://schemas.taskcluster.net/auth/v1/client-message.json#', 'routingKey': [{'multipleWords': True, 'summary': 'Space reserved for future routing-key entries, you should always match this entry with `#`. As automatically done by our tooling, if not specified.', 'name': 'reserved', 'required': False}]}, *args, **kwargs)
 
     """
     Client Deleted Messages
@@ -64,7 +64,7 @@ class AuthEvents(AsyncBaseClient):
     """
 
     def clientDeleted(self, *args, **kwargs):
-        return self._makeTopicExchange({'schema': u'http://schemas.taskcluster.net/auth/v1/client-message.json#', 'routingKey': [{u'multipleWords': True, u'required': False, u'name': u'reserved', u'summary': u'Space reserved for future routing-key entries, you should always match this entry with `#`. As automatically done by our tooling, if not specified.'}], 'name': u'clientDeleted', 'exchange': u'client-deleted'}, *args, **kwargs)
+        return self._makeTopicExchange({'exchange': 'client-deleted', 'name': 'clientDeleted', 'schema': 'http://schemas.taskcluster.net/auth/v1/client-message.json#', 'routingKey': [{'multipleWords': True, 'summary': 'Space reserved for future routing-key entries, you should always match this entry with `#`. As automatically done by our tooling, if not specified.', 'name': 'reserved', 'required': False}]}, *args, **kwargs)
 
     """
     Role Created Messages
@@ -77,7 +77,7 @@ class AuthEvents(AsyncBaseClient):
     """
 
     def roleCreated(self, *args, **kwargs):
-        return self._makeTopicExchange({'schema': u'http://schemas.taskcluster.net/auth/v1/role-message.json#', 'routingKey': [{u'multipleWords': True, u'required': False, u'name': u'reserved', u'summary': u'Space reserved for future routing-key entries, you should always match this entry with `#`. As automatically done by our tooling, if not specified.'}], 'name': u'roleCreated', 'exchange': u'role-created'}, *args, **kwargs)
+        return self._makeTopicExchange({'exchange': 'role-created', 'name': 'roleCreated', 'schema': 'http://schemas.taskcluster.net/auth/v1/role-message.json#', 'routingKey': [{'multipleWords': True, 'summary': 'Space reserved for future routing-key entries, you should always match this entry with `#`. As automatically done by our tooling, if not specified.', 'name': 'reserved', 'required': False}]}, *args, **kwargs)
 
     """
     Role Updated Messages
@@ -90,7 +90,7 @@ class AuthEvents(AsyncBaseClient):
     """
 
     def roleUpdated(self, *args, **kwargs):
-        return self._makeTopicExchange({'schema': u'http://schemas.taskcluster.net/auth/v1/role-message.json#', 'routingKey': [{u'multipleWords': True, u'required': False, u'name': u'reserved', u'summary': u'Space reserved for future routing-key entries, you should always match this entry with `#`. As automatically done by our tooling, if not specified.'}], 'name': u'roleUpdated', 'exchange': u'role-updated'}, *args, **kwargs)
+        return self._makeTopicExchange({'exchange': 'role-updated', 'name': 'roleUpdated', 'schema': 'http://schemas.taskcluster.net/auth/v1/role-message.json#', 'routingKey': [{'multipleWords': True, 'summary': 'Space reserved for future routing-key entries, you should always match this entry with `#`. As automatically done by our tooling, if not specified.', 'name': 'reserved', 'required': False}]}, *args, **kwargs)
 
     """
     Role Deleted Messages
@@ -103,10 +103,10 @@ class AuthEvents(AsyncBaseClient):
     """
 
     def roleDeleted(self, *args, **kwargs):
-        return self._makeTopicExchange({'schema': u'http://schemas.taskcluster.net/auth/v1/role-message.json#', 'routingKey': [{u'multipleWords': True, u'required': False, u'name': u'reserved', u'summary': u'Space reserved for future routing-key entries, you should always match this entry with `#`. As automatically done by our tooling, if not specified.'}], 'name': u'roleDeleted', 'exchange': u'role-deleted'}, *args, **kwargs)
+        return self._makeTopicExchange({'exchange': 'role-deleted', 'name': 'roleDeleted', 'schema': 'http://schemas.taskcluster.net/auth/v1/role-message.json#', 'routingKey': [{'multipleWords': True, 'summary': 'Space reserved for future routing-key entries, you should always match this entry with `#`. As automatically done by our tooling, if not specified.', 'name': 'reserved', 'required': False}]}, *args, **kwargs)
 
     funcinfo = {
     }
 
 
-__all__ = ['createTemporaryCredentials', 'config', '_defaultConfig', 'createApiClient', 'createSession', u'AuthEvents']
+__all__ = ['createTemporaryCredentials', 'config', '_defaultConfig', 'createApiClient', 'createSession', 'AuthEvents']

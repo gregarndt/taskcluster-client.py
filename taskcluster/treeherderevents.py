@@ -42,10 +42,10 @@ class TreeherderEvents(BaseClient):
     """
 
     def jobs(self, *args, **kwargs):
-        return self._makeTopicExchange({'schema': u'http://schemas.taskcluster.net/taskcluster-treeherder/v1/pulse-job.json#', 'routingKey': [{u'multipleWords': False, u'required': True, u'name': u'destination', u'summary': u'destination'}, {u'multipleWords': False, u'required': True, u'name': u'project', u'summary': u'project'}, {u'multipleWords': True, u'required': False, u'name': u'reserved', u'summary': u'Space reserved for future routing-key entries, you should always match this entry with `#`. As automatically done by our tooling, if not specified.'}], 'name': u'jobs', 'exchange': u'jobs'}, *args, **kwargs)
+        return self._makeTopicExchange({'exchange': 'jobs', 'name': 'jobs', 'schema': 'http://schemas.taskcluster.net/taskcluster-treeherder/v1/pulse-job.json#', 'routingKey': [{'multipleWords': False, 'summary': 'destination', 'name': 'destination', 'required': True}, {'multipleWords': False, 'summary': 'project', 'name': 'project', 'required': True}, {'multipleWords': True, 'summary': 'Space reserved for future routing-key entries, you should always match this entry with `#`. As automatically done by our tooling, if not specified.', 'name': 'reserved', 'required': False}]}, *args, **kwargs)
 
     funcinfo = {
     }
 
 
-__all__ = ['createTemporaryCredentials', 'config', '_defaultConfig', 'createApiClient', 'createSession', u'TreeherderEvents']
+__all__ = ['createTemporaryCredentials', 'config', '_defaultConfig', 'createApiClient', 'createSession', 'TreeherderEvents']
