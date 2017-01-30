@@ -57,18 +57,18 @@ class Login(BaseClient):
 
     funcinfo = {
         "ping": {           'args': [],
-            'method': 'get',
-            'name': 'ping',
-            'route': '/ping',
-            'stability': 'stable'},
+            'method': u'get',
+            'name': u'ping',
+            'route': u'/ping',
+            'stability': u'stable'},
         "credentialsFromPersonaAssertion": {           'args': [],
-            'input': 'http://schemas.taskcluster.net/login/v1/persona-request.json',
-            'method': 'post',
-            'name': 'credentialsFromPersonaAssertion',
-            'output': 'http://schemas.taskcluster.net/login/v1/credentials-response.json',
-            'route': '/persona',
-            'stability': 'experimental'},
+            'input': u'http://schemas.taskcluster.net/login/v1/persona-request.json',
+            'method': u'post',
+            'name': u'credentialsFromPersonaAssertion',
+            'output': u'http://schemas.taskcluster.net/login/v1/credentials-response.json',
+            'route': u'/persona',
+            'stability': u'experimental'},
     }
 
 
-__all__ = ['createTemporaryCredentials', 'config', '_defaultConfig', 'createApiClient', 'createSession', 'Login']
+__all__ = ['createTemporaryCredentials', 'config', '_defaultConfig', 'createApiClient', 'createSession', u'Login']

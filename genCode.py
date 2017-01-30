@@ -225,20 +225,16 @@ for name, api in apiConfig.items():
     syncImporterLines.append('from .%s import %s  # NOQA' % (name.lower(), name))
     asyncImporterLines.append('from .%s import %s  # NOQA' % (name.lower(), name))
 
-    with open(syncfilename, 'w') as f:
+    with open(syncfilename, 'wb') as f:
         if not six.PY2:
-            f.write(syncClientString)
             py_compile.compile(syncfilename, doraise=True)
-        else:
-            f.write(syncClientString.encode('utf-8'))
+        f.write(syncClientString.encode('utf-8'))
         filesCreated.append(syncfilename)
 
-    with open(asyncfilename, 'w') as f:
+    with open(asyncfilename, 'wb') as f:
         if not six.PY2:
-            f.write(asyncClientString)
             py_compile.compile(asyncfilename, doraise=True)
-        else:
-            f.write(asyncClientString.encode('utf-8'))
+        f.write(asyncClientString.encode('utf-8'))
         filesCreated.append(asyncfilename)
 
 syncImporterFilename = os.path.join('taskcluster', '_client_importer.py')
